@@ -70,6 +70,16 @@ $(document).ready(function() {
   });
 });
 
+function inName(fullname) {
+  fullname = fullname.trim.split(" ");
+  var first = fullname[0];
+  var last = fullname[1];
+  first = first.slice(0,1).toUpperCase() + first.slice(1);
+  last = last.toUpperCase();
+  var iName = first + " " + last;
+  return iName;
+}
+
 /*
 The next few lines about clicks are for the Collecting Click Locations quiz in the lesson Flow Control from JavaScript Basics.
 */
@@ -86,7 +96,9 @@ function logClicks(x,y) {
 }
 
 $(document).click(function(loc) {
-  // your code goes here!
+  var x = loc.pageX;
+  var y = loc.pageY;
+  logClicks(x,y);
 });
 
 
